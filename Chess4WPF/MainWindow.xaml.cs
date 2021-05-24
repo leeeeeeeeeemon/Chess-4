@@ -23,6 +23,7 @@ namespace Chess4WPF
         public MainWindow()
         {
             InitializeComponent();
+            
         }
     }
 }

@@ -39,6 +39,7 @@
         <Border Grid.Column="5" Grid.Row="0" Background="Red" Name="f8"/>
         <Border Grid.Column="6" Grid.Row="0" Background="White" Name="g8"/>
         <Border Grid.Column="7" Grid.Row="0" Background="Red" Name="h8"/>
+        <Border Grid.Column="8" Grid.Row="0" Background="black" Name="Num8" Cursor="SizeNESW"/>
 
         <Border Grid.Column="0" Grid.Row="1" Background="Red" Name="a7"/>
         <Border Grid.Column="1" Grid.Row="1" Background="White" Name="b7"/>
