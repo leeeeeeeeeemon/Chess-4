@@ -5,9 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Chess4WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="920" Width="1000">
-    <Grid>
+        Title="MainWindow" Height="1020.891" Width="1000">
+    <Window.Resources>
+        <Style x:Key="side">
+            <Setter Property="Control.Background" Value="Gray" />
+        </Style>
+    </Window.Resources>
+    <Grid Height="979" VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
             <ColumnDefinition Width="100" />
             <ColumnDefinition Width="100" />
             <ColumnDefinition Width="100" />
@@ -29,79 +35,111 @@
             <RowDefinition Height="100" />
             <RowDefinition Height="100" />
             <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
         </Grid.RowDefinitions>
+        <Border x:Name="a" Grid.Column="1" Grid.Row="0"  Style="{StaticResource side}"/>
+        <Border x:Name="aB" Grid.Column="1" Grid.Row="9"  Style="{StaticResource side}"/>
+        <Border Grid.Column="1" Grid.Row="1" Background="White" Name="a8" />
+        <Border Grid.Column="2" Grid.Row="1" Background="Red" Name="b8"/>
+        <Border Grid.Column="3" Grid.Row="1" Background="White" Name="c8" />
+        <Border Grid.Column="4" Grid.Row="1" Background="Red" Name="d8"/>
+        <Border Grid.Column="5" Grid.Row="1" Background="White" Name="e8"/>
+        <Border Grid.Column="6" Grid.Row="1" Background="Red" Name="f8"/>
+        <Border Grid.Column="7" Grid.Row="1" Background="White" Name="g8"/>
+        <Border Grid.Column="8" Grid.Row="1" Background="Red" Name="h8"/>
+        <Border x:Name="num8" Grid.Column="9" Grid.Row="1"  Style="{StaticResource side}"/>
+        <Border x:Name="num8L" Grid.Column="0" Grid.Row="1"  Style="{StaticResource side}"/>
 
-        <Border Grid.Column="0" Grid.Row="0" Background="White" Name="a8" />
-        <Border Grid.Column="1" Grid.Row="0" Background="Red" Name="b8"/>
-        <Border Grid.Column="2" Grid.Row="0" Background="White" Name="c8" />
-        <Border Grid.Column="3" Grid.Row="0" Background="Red" Name="d8"/>
-        <Border Grid.Column="4" Grid.Row="0" Background="White" Name="e8"/>
-        <Border Grid.Column="5" Grid.Row="0" Background="Red" Name="f8"/>
-        <Border Grid.Column="6" Grid.Row="0" Background="White" Name="g8"/>
-        <Border Grid.Column="7" Grid.Row="0" Background="Red" Name="h8"/>
-        <Border Grid.Column="8" Grid.Row="0" Background="black" Name="Num8" Cursor="SizeNESW"/>
+        <Border x:Name="b" Grid.Column="2" Grid.Row="0"  Style="{StaticResource side}"/>
+        <Border x:Name="bB" Grid.Column="2" Grid.Row="9"  Style="{StaticResource side}"/>
+        <Border Grid.Column="1" Grid.Row="2" Background="Red" Name="a7"/>
+        <Border Grid.Column="2" Grid.Row="2" Background="White" Name="b7"/>
+        <Border Grid.Column="3" Grid.Row="2" Background="Red" Name="c7"/>
+        <Border Grid.Column="4" Grid.Row="2" Background="White" Name="d7"/>
+        <Border Grid.Column="5" Grid.Row="2" Background="Red" Name="e7"/>
+        <Border Grid.Column="6" Grid.Row="2" Background="White" Name="f7"/>
+        <Border Grid.Column="7" Grid.Row="2" Background="Red" Name="g7"/>
+        <Border Grid.Column="8" Grid.Row="2" Background="White" Name="h7"/>
+        <Border x:Name="num7" Grid.Column="9" Grid.Row="2"  Style="{StaticResource side}"/>
+        <Border x:Name="num7L" Grid.Column="0" Grid.Row="2"  Style="{StaticResource side}"/>
 
-        <Border Grid.Column="0" Grid.Row="1" Background="Red" Name="a7"/>
-        <Border Grid.Column="1" Grid.Row="1" Background="White" Name="b7"/>
-        <Border Grid.Column="2" Grid.Row="1" Background="Red" Name="c7"/>
-        <Border Grid.Column="3" Grid.Row="1" Background="White" Name="d7"/>
-        <Border Grid.Column="4" Grid.Row="1" Background="Red" Name="e7"/>
-        <Border Grid.Column="5" Grid.Row="1" Background="White" Name="f7"/>
-        <Border Grid.Column="6" Grid.Row="1" Background="Red" Name="g7"/>
-        <Border Grid.Column="7" Grid.Row="1" Background="White" Name="h7"/>
+        <Border x:Name="c" Grid.Column="3" Grid.Row="0"  Style="{StaticResource side}"/>
+        <Border x:Name="cB" Grid.Column="3" Grid.Row="9"  Style="{StaticResource side}"/>
+        <Border x:Name="a6" Grid.Column="1" Grid.Row="3" Background="White" />
+        <Border x:Name="b6" Grid.Column="2" Grid.Row="3" Background="Red" />
+        <Border x:Name="c6" Grid.Column="3" Grid.Row="3" Background="White" />
+        <Border x:Name="d6" Grid.Column="4" Grid.Row="3" Background="Red" />
+        <Border x:Name="e6" Grid.Column="5" Grid.Row="3" Background="White" />
+        <Border x:Name="f6" Grid.Column="6" Grid.Row="3" Background="Red" />
+        <Border x:Name="g6" Grid.Column="7" Grid.Row="3" Background="White" />
+        <Border x:Name="h6" Grid.Column="8" Grid.Row="3" Background="Red" />
+        <Border x:Name="num6" Grid.Column="9" Grid.Row="3"  Style="{StaticResource side}"/>
+        <Border x:Name="num6L" Grid.Column="0" Grid.Row="3"  Style="{StaticResource side}"/>
 
-        <Border x:Name="a6" Grid.Column="0" Grid.Row="2" Background="White" />
-        <Border x:Name="b6" Grid.Column="1" Grid.Row="2" Background="Red" />
-        <Border x:Name="c6" Grid.Column="2" Grid.Row="2" Background="White" />
-        <Border x:Name="d6" Grid.Column="3" Grid.Row="2" Background="Red" />
-        <Border x:Name="e6" Grid.Column="4" Grid.Row="2" Background="White" />
-        <Border x:Name="f6" Grid.Column="5" Grid.Row="2" Background="Red" />
-        <Border x:Name="g6" Grid.Column="6" Grid.Row="2" Background="White" />
-        <Border x:Name="h6" Grid.Column="7" Grid.Row="2" Background="Red" />
+        <Border x:Name="d" Grid.Column="4" Grid.Row="0"  Style="{StaticResource side}"/>
+        <Border x:Name="dB" Grid.Column="4" Grid.Row="9"  Style="{StaticResource side}"/>
+        <Border x:Name="a5" Grid.Column="1" Grid.Row="4" Background="Red" />
+        <Border x:Name="b5" Grid.Column="2" Grid.Row="4" Background="White" />
+        <Border x:Name="c5" Grid.Column="3" Grid.Row="4" Background="Red" />
+        <Border x:Name="d5" Grid.Column="4" Grid.Row="4" Background="White" />
+        <Border x:Name="e5" Grid.Column="5" Grid.Row="4" Background="Red" />
+        <Border x:Name="f5" Grid.Column="6" Grid.Row="4" Background="White" />
+        <Border x:Name="g5" Grid.Column="7" Grid.Row="4" Background="Red" />
+        <Border x:Name="h5" Grid.Column="8" Grid.Row="4" Background="White" />
+        <Border x:Name="num5" Grid.Column="9" Grid.Row="4"  Style="{StaticResource side}"/>
+        <Border x:Name="num5L" Grid.Column="0" Grid.Row="4"  Style="{StaticResource side}"/>
 
-        <Border x:Name="a5" Grid.Column="0" Grid.Row="3" Background="Red" />
-        <Border x:Name="b5" Grid.Column="1" Grid.Row="3" Background="White" />
-        <Border x:Name="c5" Grid.Column="2" Grid.Row="3" Background="Red" />
-        <Border x:Name="d5" Grid.Column="3" Grid.Row="3" Background="White" />
-        <Border x:Name="e5" Grid.Column="4" Grid.Row="3" Background="Red" />
-        <Border x:Name="f5" Grid.Column="5" Grid.Row="3" Background="White" />
-        <Border x:Name="g5" Grid.Column="6" Grid.Row="3" Background="Red" />
-        <Border x:Name="h5" Grid.Column="7" Grid.Row="3" Background="White" />
-        
-        <Border x:Name="a4" Grid.Column="0" Grid.Row="4" Background="White" />
-        <Border x:Name="b4" Grid.Column="1" Grid.Row="4" Background="Red" />
-        <Border x:Name="c4" Grid.Column="2" Grid.Row="4" Background="White" />
-        <Border x:Name="d4" Grid.Column="3" Grid.Row="4" Background="Red" />
-        <Border x:Name="e4" Grid.Column="4" Grid.Row="4" Background="White" />
-        <Border x:Name="f4" Grid.Column="5" Grid.Row="4" Background="Red" />
-        <Border x:Name="g4" Grid.Column="6" Grid.Row="4" Background="White" />
-        <Border x:Name="h4" Grid.Column="7" Grid.Row="4" Background="Red" />
+        <Border x:Name="e" Grid.Column="5" Grid.Row="0"  Style="{StaticResource side}"/>
+        <Border x:Name="eB" Grid.Column="5" Grid.Row="9"  Style="{StaticResource side}"/>
+        <Border x:Name="a4" Grid.Column="1" Grid.Row="5" Background="White" />
+        <Border x:Name="b4" Grid.Column="2" Grid.Row="5" Background="Red" />
+        <Border x:Name="c4" Grid.Column="3" Grid.Row="5" Background="White" />
+        <Border x:Name="d4" Grid.Column="4" Grid.Row="5" Background="Red" />
+        <Border x:Name="e4" Grid.Column="5" Grid.Row="5" Background="White" />
+        <Border x:Name="f4" Grid.Column="6" Grid.Row="5" Background="Red" />
+        <Border x:Name="g4" Grid.Column="7" Grid.Row="5" Background="White" />
+        <Border x:Name="h4" Grid.Column="8" Grid.Row="5" Background="Red" />
+        <Border x:Name="num4" Grid.Column="9" Grid.Row="5"  Style="{StaticResource side}"/>
+        <Border x:Name="num4L" Grid.Column="0" Grid.Row="5"  Style="{StaticResource side}"/>
 
-        <Border x:Name="a3" Grid.Column="0" Grid.Row="5" Background="Red" />
-        <Border x:Name="b3" Grid.Column="1" Grid.Row="5" Background="White" />
-        <Border x:Name="c3" Grid.Column="2" Grid.Row="5" Background="Red" />
-        <Border x:Name="d3" Grid.Column="3" Grid.Row="5" Background="White" />
-        <Border x:Name="e3" Grid.Column="4" Grid.Row="5" Background="Red" />
-        <Border x:Name="f3" Grid.Column="5" Grid.Row="5" Background="White" />
-        <Border x:Name="g3" Grid.Column="6" Grid.Row="5" Background="Red" />
-        <Border x:Name="h3" Grid.Column="7" Grid.Row="5" Background="White" />
+        <Border x:Name="f" Grid.Column="6" Grid.Row="0"  Style="{StaticResource side}"/>
+        <Border x:Name="fB" Grid.Column="6" Grid.Row="9"  Style="{StaticResource side}"/>
+        <Border x:Name="a3" Grid.Column="1" Grid.Row="6" Background="Red" />
+        <Border x:Name="b3" Grid.Column="2" Grid.Row="6" Background="White" />
+        <Border x:Name="c3" Grid.Column="3" Grid.Row="6" Background="Red" />
+        <Border x:Name="d3" Grid.Column="4" Grid.Row="6" Background="White" />
+        <Border x:Name="e3" Grid.Column="5" Grid.Row="6" Background="Red" />
+        <Border x:Name="f3" Grid.Column="6" Grid.Row="6" Background="White" />
+        <Border x:Name="g3" Grid.Column="7" Grid.Row="6" Background="Red" />
+        <Border x:Name="h3" Grid.Column="8" Grid.Row="6" Background="White" />
+        <Border x:Name="num3" Grid.Column="9" Grid.Row="6"  Style="{StaticResource side}"/>
+        <Border x:Name="num3L" Grid.Column="0" Grid.Row="6"  Style="{StaticResource side}"/>
 
-        <Border x:Name="a2" Grid.Column="0" Grid.Row="6" Background="White" />
-        <Border x:Name="b2" Grid.Column="1" Grid.Row="6" Background="Red" />
-        <Border x:Name="c2" Grid.Column="2" Grid.Row="6" Background="White" />
-        <Border x:Name="d2" Grid.Column="3" Grid.Row="6" Background="Red" />
-        <Border x:Name="e2" Grid.Column="4" Grid.Row="6" Background="White" />
-        <Border x:Name="f2" Grid.Column="5" Grid.Row="6" Background="Red" />
-        <Border x:Name="g2" Grid.Column="6" Grid.Row="6" Background="White" />
-        <Border x:Name="h2" Grid.Column="7" Grid.Row="6" Background="Red" />
+        <Border x:Name="g" Grid.Column="7" Grid.Row="0"  Style="{StaticResource side}"/>
+        <Border x:Name="gB" Grid.Column="7" Grid.Row="9"  Style="{StaticResource side}"/>
+        <Border x:Name="a2" Grid.Column="1" Grid.Row="7" Background="White" />
+        <Border x:Name="b2" Grid.Column="2" Grid.Row="7" Background="Red" />
+        <Border x:Name="c2" Grid.Column="3" Grid.Row="7" Background="White" />
+        <Border x:Name="d2" Grid.Column="4" Grid.Row="7" Background="Red" />
+        <Border x:Name="e2" Grid.Column="5" Grid.Row="7" Background="White" />
+        <Border x:Name="f2" Grid.Column="6" Grid.Row="7" Background="Red" />
+        <Border x:Name="g2" Grid.Column="7" Grid.Row="7" Background="White" />
+        <Border x:Name="h2" Grid.Column="8" Grid.Row="7" Background="Red" />
+        <Border x:Name="num2" Grid.Column="9" Grid.Row="7"  Style="{StaticResource side}"/>
+        <Border x:Name="num2L" Grid.Column="0" Grid.Row="7"  Style="{StaticResource side}"/>
 
-        <Border x:Name="a1" Grid.Column="0" Grid.Row="7" Background="Red" />
-        <Border x:Name="b1" Grid.Column="1" Grid.Row="7" Background="White" />
-        <Border x:Name="c1" Grid.Column="2" Grid.Row="7" Background="Red" />
-        <Border x:Name="d1" Grid.Column="3" Grid.Row="7" Background="White" />
-        <Border x:Name="e1" Grid.Column="4" Grid.Row="7" Background="Red" />
-        <Border x:Name="f1" Grid.Column="5" Grid.Row="7" Background="White" />
-        <Border x:Name="g1" Grid.Column="6" Grid.Row="7" Background="Red" />
-        <Border x:Name="h1" Grid.Column="7" Grid.Row="7" Background="White" />
+        <Border x:Name="h" Grid.Column="8" Grid.Row="0"  Style="{StaticResource side}"/>
+        <Border x:Name="hB" Grid.Column="8" Grid.Row="9"  Style="{StaticResource side}"/>
+        <Border x:Name="a1" Grid.Column="1" Grid.Row="8" Background="Red" />
+        <Border x:Name="b1" Grid.Column="2" Grid.Row="8" Background="White" />
+        <Border x:Name="c1" Grid.Column="3" Grid.Row="8" Background="Red" />
+        <Border x:Name="d1" Grid.Column="4" Grid.Row="8" Background="White" />
+        <Border x:Name="e1" Grid.Column="5" Grid.Row="8" Background="Red" />
+        <Border x:Name="f1" Grid.Column="6" Grid.Row="8" Background="White" />
+        <Border x:Name="g1" Grid.Column="7" Grid.Row="8" Background="Red" />
+        <Border x:Name="h1" Grid.Column="8" Grid.Row="8" Background="White" />
+        <Border x:Name="num1" Grid.Column="9" Grid.Row="8"  Style="{StaticResource side}"/>
+        <Border x:Name="num1L" Grid.Column="0" Grid.Row="8"  Style="{StaticResource side}"/>
     </Grid>
 </Window>
