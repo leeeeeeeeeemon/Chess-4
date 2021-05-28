@@ -24,6 +24,13 @@ namespace Chess4WPF
         {
             InitializeComponent();
             
+            
+        }
+
+        private void c1_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+           char[] charArray = c1.Name.ToCharArray();
+            
         }
     }
 }
