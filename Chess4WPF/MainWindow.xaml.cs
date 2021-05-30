@@ -21,28 +21,7 @@ namespace Chess4WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        public class VisualHelper
-        {
-            public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
-            {
-                if (depObj != null)
-                {
-                    for (int i = 0; i < VisualTreeHelper.GetChildrenCount(depObj); i++)
-                    {
-                        DependencyObject child = VisualTreeHelper.GetChild(depObj, i);
-                        if (child != null && child is T)
-                        {
-                            yield return (T)child;
-                        }
 
-                        foreach (T childOfChild in FindVisualChildren<T>(child))
-                        {
-                            yield return childOfChild;
-                        }
-                    }
-                }
-            }
-        }
 
         public MainWindow()
         {
@@ -54,7 +33,7 @@ namespace Chess4WPF
                 {
 
                     var bor = new Button();
-                    //bor.Click += Active;
+                    bor.Click += Active;
                     bor.Height = 100;
                     bor.Width = 100;
                     bor.Background = Brushes.Yellow;
@@ -77,10 +56,51 @@ namespace Chess4WPF
             img.Height = 100;
             img.Width = 100;
             img.Name = "бкороль";
-            img.Source = new BitmapImage(new System.Uri("pack://application:,,,/Resources/king.jpeg"));
-            Grid.SetRow(img, 8);
-            Grid.SetColumn(img, 4);
+            img.MouseDown += Active;
+            img.Source = new BitmapImage(new System.Uri("pack://application:,,,/king.jpeg"));
+            Grid.SetRow(img, 7);
+            Grid.SetColumn(img, 3);
             gridMain.Children.Add(img);
+        }
+        public static bool flag = false;//переменная для проверки второго нажатия на клетку
+        public static int xClick;
+        public static int yClick;
+        public static Image figur;
+        
+        
+        private void Active(object sender, RoutedEventArgs e)
+        {
+            
+            if (flag)
+            {
+                var figure = sender as Button;
+                int x = Grid.GetRow(figure);
+                int y = Grid.GetColumn(figure);
+                bool mogno = rule.tryKingMove(xClick, yClick, x, y);
+                if (mogno)
+                {
+                    Grid.SetRow(figur, x);
+                    Grid.SetColumn(figur, y);
+                }
+                else
+                {
+                    MessageBox.Show("Wrong move");
+                }
+                flag = false;
+            }
+            else
+            {
+                if (sender is Image)
+                {
+                    var figure = sender as Image;
+                    figur = figure;
+                    xClick = Grid.GetRow(figure);
+                    yClick = Grid.GetColumn(figure);
+                    flag = true;
+                    string r = "x=" + xClick + " y=" + yClick;
+                    MessageBox.Show(r);
+                }
+            }
         }
     }
 }
