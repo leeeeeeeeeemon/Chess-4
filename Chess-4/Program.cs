@@ -7,8 +7,8 @@ class Program
 {
     static void Main()
     {
-        King test = new King(1, 1);
-        Console.WriteLine(test.Move(8, 1) ? "YES" : "NO");
+        King test = new King(3, 8);
+        Console.WriteLine(test.Move(3, 7) ? "YES" : "NO");
     }
 }
 
