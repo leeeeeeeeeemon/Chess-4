@@ -26,6 +26,7 @@ namespace Chess4WPF
         public MainWindow()
         {
             InitializeComponent();
+            
             int count = 0;
             for (int i = 0; i < 8; i++)
             {
@@ -36,7 +37,7 @@ namespace Chess4WPF
                     bor.Click += Active;
                     bor.Height = 100;
                     bor.Width = 100;
-                    bor.Background = Brushes.Yellow;
+                    bor.Background = Brushes.WhiteSmoke;
 
                     count += 1;
                     if ((count) % 2 == 0)
@@ -63,8 +64,8 @@ namespace Chess4WPF
             gridMain.Children.Add(img);
         }
         public static bool flag = false;//переменная для проверки второго нажатия на клетку
-        public static int xClick;
-        public static int yClick;
+        public static int xFigure;
+        public static int yFigure;
         public static Image figur;
         
         
@@ -76,7 +77,7 @@ namespace Chess4WPF
                 var figure = sender as Button;
                 int x = Grid.GetRow(figure);
                 int y = Grid.GetColumn(figure);
-                bool mogno = rule.tryKingMove(xClick, yClick, x, y);
+                bool mogno = rule.tryKingMove(xFigure, yFigure, x, y);
                 if (mogno)
                 {
                     Grid.SetRow(figur, x);
@@ -94,10 +95,10 @@ namespace Chess4WPF
                 {
                     var figure = sender as Image;
                     figur = figure;
-                    xClick = Grid.GetRow(figure);
-                    yClick = Grid.GetColumn(figure);
+                    xFigure = Grid.GetRow(figure);
+                    yFigure = Grid.GetColumn(figure);
                     flag = true;
-                    string r = "x=" + xClick + " y=" + yClick;
+                    string r = "x=" + xFigure + " y=" + yFigure;
                     MessageBox.Show(r);
                 }
             }
