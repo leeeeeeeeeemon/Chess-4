@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Chess4WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1020.891" Width="1000">
+        Title="MainWindow">
     <Window.Resources>
         <Style x:Key="side">
             <Setter Property="Control.Background" Value="Gray" />
@@ -14,7 +14,7 @@
         <SolidColorBrush x:Key="BlueGridLine" Color="#554444FF"/>
     </Window.Resources>
     
-    <Grid x:Name="gridMain" Height="979" VerticalAlignment="Top" >
+    <Grid x:Name="gridMain" VerticalAlignment="Top" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50" />
             <ColumnDefinition Width="50" />

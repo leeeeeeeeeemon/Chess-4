@@ -38,7 +38,7 @@ namespace Chess4WPF
                     bor.Height = 100;
                     bor.Width = 100;
                     bor.Background = Brushes.WhiteSmoke;
-
+                    bor.Name = "b" + Convert.ToString(i) + Convert.ToString(j);
                     count += 1;
                     if ((count) % 2 == 0)
                     {
@@ -48,17 +48,15 @@ namespace Chess4WPF
                     Grid.SetColumn(bor, j);
 
                     gridMain.Children.Add(bor);
-
-
                 }
                 count += 1;
             }
             Image img = new Image();
-            img.Height = 100;
-            img.Width = 100;
+            //img.Height = 100;
+            //img.Width = 100;
             img.Name = "бкороль";
             img.MouseDown += Active;
-            img.Source = new BitmapImage(new System.Uri("pack://application:,,,/king.jpeg"));
+            img.Source = new BitmapImage(new System.Uri("pack://application:,,,/king.png"));
             Grid.SetRow(img, 7);
             Grid.SetColumn(img, 3);
             gridMain.Children.Add(img);
@@ -69,10 +67,11 @@ namespace Chess4WPF
         public static Image figur;
         
         
+        
         private void Active(object sender, RoutedEventArgs e)
         {
             
-            if (flag)
+            if (flag && sender is Button)
             {
                 var figure = sender as Button;
                 int x = Grid.GetRow(figure);
@@ -88,6 +87,7 @@ namespace Chess4WPF
                     MessageBox.Show("Wrong move");
                 }
                 flag = false;
+                
             }
             else
             {
@@ -95,11 +95,13 @@ namespace Chess4WPF
                 {
                     var figure = sender as Image;
                     figur = figure;
+                    
                     xFigure = Grid.GetRow(figure);
                     yFigure = Grid.GetColumn(figure);
                     flag = true;
                     string r = "x=" + xFigure + " y=" + yFigure;
-                    MessageBox.Show(r);
+                    //MessageBox.Show(r);
+                    
                 }
             }
         }
