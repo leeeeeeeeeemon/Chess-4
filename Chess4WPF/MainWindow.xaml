@@ -13,7 +13,7 @@
         <SolidColorBrush x:Key="RedGridLine" Color="#FFFF4444" />
         <SolidColorBrush x:Key="BlueGridLine" Color="#554444FF"/>
     </Window.Resources>
-    
+
     <Grid x:Name="gridMain" VerticalAlignment="Top" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50" />
@@ -41,6 +41,8 @@
             <RowDefinition Height="50" />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
-        
+        <CheckBox x:Name="WhiteCheck" Content="White" Grid.Column="8" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="57" IsChecked="True" Grid.ColumnSpan="2"/>
+        <Button x:Name="KingButton" Content="King" Grid.Column="8" HorizontalAlignment="Left" Margin="0,20,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2" Click="KingButton_Click_1"/>
+
     </Grid>
 </Window>
